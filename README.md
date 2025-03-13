@@ -19,10 +19,10 @@
 ### Clonar el Repositorio 🔧
 
 ```
-git clone <url_del_repositorio>
+git clone https://github.com/Andres-D-Aponte/study-request-front
 ```
 ```
-cd carpeta_del_repositorio
+cd study-request-front
 ```
 #### Dentro de la raíz del proyecto ejecute el siguiente comando
 ```
