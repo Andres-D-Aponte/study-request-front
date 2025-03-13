@@ -1,0 +1,106 @@
+<h1 class="text-center text-blue-800 mb-5">
+  {{ !candidato ? "Crear candidato" : "Actualizar Candidato" }}
+</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="grid">
+    <div class="col-12 md:col-4">
+      <div
+        class="flex flex-wrap gap-8 align-items-center justify-content-center md:justify-content-center m-2"
+      >
+        <p-floatLabel>
+          <input
+            id="documento_identidad"
+            type="text"
+            pInputText
+            formControlName="documento_identidad"
+          />
+          <label for="documento_identidad">Documento</label>
+        </p-floatLabel>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div
+        class="flex flex-wrap gap-8 align-items-center justify-content-center md:justify-content-center m-2"
+      >
+        <p-floatLabel>
+          <input id="nombre" type="text" pInputText formControlName="nombre" />
+          <label for="nombre">Nombre</label>
+        </p-floatLabel>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div
+        class="flex flex-wrap gap-8 align-items-center justify-content-center md:justify-content-center m-2"
+      >
+        <p-floatLabel>
+          <input
+            id="apellido"
+            type="text"
+            pInputText
+            formControlName="apellido"
+          />
+          <label for="apellido">Apellido</label>
+        </p-floatLabel>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div
+        class="flex flex-wrap gap-8 align-items-center justify-content-center md:justify-content-center m-2"
+      >
+        <p-floatLabel>
+          <input id="correo" type="email" pInputText formControlName="correo" />
+          <label for="correo">Correo Electrónico</label>
+        </p-floatLabel>
+      </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+      <div
+        class="flex flex-wrap gap-8 align-items-center justify-content-center md:justify-content-center m-2"
+      >
+        <p-floatLabel>
+          <input
+            id="telefono"
+            type="text"
+            pInputText
+            formControlName="telefono"
+          />
+          <label for="telefono">Teléfono</label>
+        </p-floatLabel>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div
+        class="flex flex-wrap gap-2 align-items-center justify-content-center"
+      >
+        <app-button
+          [label]="!candidato ? 'Guardar Candidato' : 'Actualizar Candidato'"
+          [icon]="!candidato ? 'pi pi-save' : 'pi pi-refresh'"
+          [color]="!candidato ? 'success' : 'warning'"
+          [disabled]="this.form.invalid"
+          type="submit"
+        />
+        <app-button
+          [hidden]="candidato"
+          label="Limpiar Campos"
+          icon="pi pi-trash"
+          color="help"
+          (click)="cleanForm()"
+        />
+        <app-button
+          label="Salir"
+          icon="pi pi-times-circle"
+          color="danger"
+          (click)="this.router.navigate(['/admin/candidatos'])"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+
+<p-toast />

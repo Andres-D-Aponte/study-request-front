@@ -1,0 +1,77 @@
+<div class="card p-4">
+  <h2 class="text-xl font-semibold mb-4">
+    {{ solicitud ? "Actualizar Solicitud" : "Crear Solicitud" }}
+  </h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Seleccionar Usuario -->
+      <div class="field">
+        <label for="usuario" class="block text-sm font-medium">Usuario</label>
+        <p-dropdown
+          [options]="usuarios"
+          formControlName="candidato_id"
+          placeholder="Seleccione un candidato"
+        >
+        </p-dropdown>
+      </div>
+
+      <!-- Seleccionar Tipo de Estudio -->
+      <div class="field">
+        <label for="tipo_estudio" class="block text-sm font-medium"
+          >Tipo de Estudio</label
+        >
+        <p-dropdown
+          [options]="estudios"
+          formControlName="tipo_estudio_id"
+          placeholder="Seleccione un estudio"
+        >
+        </p-dropdown>
+      </div>
+
+      <!-- Seleccionar Estado -->
+      <div class="field">
+        <label for="tipo_estudio" class="block text-sm font-medium"
+          >Estado</label
+        >
+        <p-dropdown
+          [options]="estados"
+          formControlName="estado"
+          placeholder="Seleccione un estado"
+        >
+        </p-dropdown>
+      </div>
+    </div>
+
+    <div class="flex justify-end gap-2 mt-4">
+      <app-button
+        [hidden]="!solicitud"
+        label="Marcar como completado"
+        icon="pi pi-check"
+        color="success"
+        (click)="markAsDone(solicitud)"
+      />
+      <app-button
+        [label]="!solicitud ? 'Guardar solicitud' : 'Actualizar solicitud'"
+        [icon]="!solicitud ? 'pi pi-save' : 'pi pi-refresh'"
+        [color]="!solicitud ? 'success' : 'warning'"
+        [disabled]="this.form.invalid"
+        type="submit"
+      />
+      <app-button
+        [hidden]="solicitud"
+        label="Limpiar Campos"
+        icon="pi pi-trash"
+        color="help"
+        (click)="cleanForm()"
+      />
+      <app-button
+        label="Salir"
+        icon="pi pi-times-circle"
+        color="danger"
+        (click)="this.router.navigate(['/admin/solicitudes'])"
+      />
+    </div>
+  </form>
+</div>
+<p-toast />

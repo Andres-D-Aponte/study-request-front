@@ -1,0 +1,51 @@
+<div class="surface-ground px-4 py-5 md:px-6 lg:px-8">
+  <div class="grid">
+      <!-- Tarjeta de Solicitudes Pendientes -->
+      <div class="col-12 md:col-6 lg:col-6">
+          <div class="surface-card shadow-2 p-3 border-round">
+              <div class="flex justify-content-between mb-3">
+                  <div>
+                      <span class="block text-500 font-medium mb-3">Solicitudes Pendientes</span>
+                      <div class="text-900 font-medium text-xl">{{ solicitudesPendientes }}</div>
+                  </div>
+                  <div class="flex align-items-center justify-content-center bg-yellow-100 border-round" style="width:2.5rem;height:2.5rem">
+                      <i class="pi pi-clock text-yellow-500 text-xl"></i>
+                  </div>
+              </div>
+              <span class="text-500">Solicitudes en espera de aprobación</span>
+          </div>
+      </div>
+
+      <!-- Tarjeta de Solicitudes en Proceso -->
+      <div class="col-12 md:col-6 lg:col-6">
+        <div class="surface-card shadow-2 p-3 border-round">
+            <div class="flex justify-content-between mb-3">
+                <div>
+                    <span class="block text-500 font-medium mb-3">Solicitudes en Proceso</span>
+                    <div class="text-900 font-medium text-xl">{{ solicitudesenProceso }}</div>
+                </div>
+                <div class="flex align-items-center justify-content-center bg-yellow-100 border-round" style="width:2.5rem;height:2.5rem">
+                    <i class="pi pi-clock text-yellow-500 text-xl"></i>
+                </div>
+            </div>
+            <span class="text-500">Solicitudes en proceso</span>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Solicitudes Completadas -->
+      <div class="col-12 md:col-6 lg:col-6">
+          <div class="surface-card shadow-2 p-3 border-round">
+              <div class="flex justify-content-between mb-3">
+                  <div>
+                      <span class="block text-500 font-medium mb-3">Solicitudes Completadas</span>
+                      <div class="text-900 font-medium text-xl">{{ solicitudesCompletadas }}</div>
+                  </div>
+                  <div class="flex align-items-center justify-content-center bg-green-100 border-round" style="width:2.5rem;height:2.5rem">
+                      <i class="pi pi-check text-green-500 text-xl"></i>
+                  </div>
+              </div>
+              <span class="text-500">Solicitudes finalizadas con éxito</span>
+          </div>
+      </div>
+  </div>
+</div>

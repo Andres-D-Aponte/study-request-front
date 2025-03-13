@@ -1,0 +1,12 @@
+<p-toast />
+<app-table
+  title="Candidatos"
+  [data]="candidatos"
+  [columns]="columns"
+  [selectionMode]="'single'"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)"
+  buttonLabel="Nuevo Candidato"
+  buttonRoute="/admin/candidatos/crear"
+></app-table>
+<p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>

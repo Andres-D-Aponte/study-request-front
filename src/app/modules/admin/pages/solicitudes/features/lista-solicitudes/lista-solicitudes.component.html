@@ -1,0 +1,12 @@
+<p-toast />
+<app-table
+  title="Solicitudes"
+  [data]="solicitudes"
+  [columns]="columns"
+  [selectionMode]="'single'"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)"
+  buttonLabel="Nueva Solicitud"
+  buttonRoute="/admin/solicitudes/crear"
+></app-table>
+<p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
